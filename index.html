@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sreejaya · Deep learning portfolio</title>
+<meta name="description" content="Portfolio of Sreejaya: deep learning for UAV, SAR and satellite imagery, plus agents and retrieval.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000000; --ink:#EAF1FF; --mute:#93A3C4; --line:rgba(234,241,255,.22);
+  --acc:#5B9BFF; --panel:rgba(0,4,14,.55); --panel2:rgba(0,4,14,.86);
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.08rem/1.65 var(--body)}
+#field{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
+main,header,footer{position:relative;z-index:1}
+a{color:var(--acc);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.4rem}
+
+header{display:flex;justify-content:space-between;align-items:center;max-width:1040px;margin:0 auto;padding:1.4rem}
+header b{font:600 1.05rem var(--display)}
+nav a{margin-left:1.4rem;color:var(--ink);text-decoration:none;font:400 .95rem var(--display)}
+nav a:hover{color:var(--acc)}
+
+.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;text-shadow:0 0 18px var(--bg),0 0 6px var(--bg)}
+h1{font:800 clamp(3.8rem,15vw,10rem)/.92 var(--display);letter-spacing:-.035em;margin:0 0 1.4rem}
+.lede{font-size:1.3rem;max-width:30ch;margin:0}
+
+h2{font:600 1.7rem/1.2 var(--display);margin:0 0 1.2rem;text-shadow:0 0 12px var(--bg)}
+section{padding:4.5rem 0 1rem}
+
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.row{display:block;padding:1.3rem 1rem;border-bottom:1px solid var(--line);background:var(--panel);
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);color:inherit;text-decoration:none;
+  transition:background .25s,padding-left .25s}
+.row:hover,.row:focus-visible{background:var(--panel2);padding-left:1.5rem}
+.row h3{font:600 1.25rem var(--display);margin:0 0 .15rem}
+.row .stack{color:var(--acc);font:400 .92rem var(--display);margin:0 0 .4rem}
+.row p{margin:0}
+
+.about p{max-width:60ch}
+.panel{background:var(--panel);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);padding:1.1rem 1.2rem;border-left:3px solid var(--acc)}
+
+.panel h3{font:600 1.05rem var(--display);margin:0 0 .2rem}
+.panel h3+p{margin:0 0 1rem}
+.panel p:last-child{margin-bottom:0}
+footer{padding:4rem 0 6rem}
+footer a{margin-right:1.4rem}
+@media (max-width:560px){nav{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.row{transition:none}}
+</style>
+</head>
+<body>
+<canvas id="field" aria-hidden="true"></canvas>
+
+<header>
+  <b>Portfolio</b>
+  <nav><a href="#work">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <h1>Sreejaya</h1>
+    <p class="lede">Physics taught me to ask why. AI lets me test it.</p>
+  </div>
+
+  <section id="work" class="wrap">
+    <h2>Projects</h2>
+    <ul class="rows">
+      <li><a class="row" href="https://github.com/YOUR-USERNAME/sar-ship-detection">
+        <h3>SAR ship detection</h3>
+        <p class="stack">YOLOv8, Sentinel-1, SSDD</p>
+        <p>A detection pipeline trained on the SSDD dataset, then run zero-shot on Sentinel-1 scenes.</p></a></li>
+      <li><a class="row" href="https://github.com/YOUR-USERNAME/paddy-disease-detection">
+        <h3>Paddy disease detection from UAV orthomosaics</h3>
+        <p class="stack">Deep learning, UAV remote sensing</p>
+        <p>Finds diseased patches in paddy fields from drone imagery, for the Smart Agrotechnologies project.</p></a></li>
+      <li><a class="row" href="https://github.com/YOUR-USERNAME/movie-recommender-agent">
+        <h3>Movie review recommender agent</h3>
+        <p class="stack">RAG, tool-using agent</p>
+        <p>Recommends movies and series grounded in what real reviews say.</p></a></li>
+    </ul>
+  </section>
+
+  <section id="about" class="wrap about">
+    <h2>About</h2>
+    <div class="panel">
+      <h3>Education</h3>
+      <p>Master’s degree in Physics, with a minor in Scientific Computing.</p>
+      <h3>Experience</h3>
+      <p>Currently working as a Project Associate at CSIR-NIDSA, Bengaluru.</p>
+    </div>
+  </section>
+
+  <footer id="contact" class="wrap">
+    <h2>Contact</h2>
+    <a href="https://github.com/YOUR-USERNAME">GitHub</a>
+    <a href="https://www.linkedin.com/in/YOUR-HANDLE">LinkedIn</a>
+    <a href="mailto:you@example.com">Email</a>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var cv=document.getElementById('field'),ctx=cv.getContext('2d');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var P={idle:[85,105,145],act:[91,155,255],acc:'#5B9BFF'};
+var CELL=30,R=190,W,H,dpr,cols,rows,X,Y,N,ANG,mx=-999,my=-999,px=0,py=0,tick=0;
+  function hash(a,b){var n=Math.sin(a*127.1+b*311.7)*43758.5453;return n-Math.floor(n)}
+  function rgba(c,a){return 'rgba('+c[0]+','+c[1]+','+c[2]+','+a+')'}
+
+  function build(){
+    dpr=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;
+    cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    cols=Math.ceil(W/CELL)+1;rows=Math.ceil(H/CELL)+1;
+    var n=cols*rows;X=new Float32Array(n);Y=new Float32Array(n);N=new Float32Array(n);ANG=new Float32Array(n);
+    for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){var i=r*cols+c;
+      X[i]=(c+.5)*CELL+(hash(r,c)-.5)*CELL*.55;Y[i]=(r+.5)*CELL+(hash(c,r+7)-.5)*CELL*.55}
+    px=W/2;py=H/2;
+  }
+
+  function frame(){
+    tick++;ctx.clearRect(0,0,W,H);
+    var live=mx>-900,tx,ty;
+    if(live){tx=mx;ty=my}
+    else if(!reduce){tx=W*(.5+.38*Math.sin(tick*.012));ty=H*(.5+.3*Math.sin(tick*.009+1))}
+    else{tx=W*.5;ty=H*.5}
+    px+=(tx-px)*.12;py+=(ty-py)*.12;
+    var poles=[[W*.28,H*.5,1],[W*.72,H*.5,-1],[px,py,2.4]],i,k;
+    for(i=0;i<X.length;i++){
+      var vx=0,vy=0;
+      for(k=0;k<3;k++){var dx=X[i]-poles[k][0],dy=Y[i]-poles[k][1],d2=dx*dx+dy*dy+500,inv=poles[k][2]/(d2*Math.sqrt(d2));vx+=dx*inv;vy+=dy*inv}
+      ANG[i]=Math.atan2(vy,vx);
+      var d=Math.hypot(X[i]-px,Y[i]-py),t=d<R?Math.pow(1-d/R,1.1):0;
+      N[i]=Math.max(N[i]*.978,t);
+    }
+    /* links between awake neighbours */
+    ctx.lineWidth=1;
+    var off=[[1,0],[0,1],[1,1],[-1,1]];
+    for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){i=r*cols+c;if(N[i]<.22)continue;
+      for(k=0;k<4;k++){var cc=c+off[k][0],rr=r+off[k][1];if(cc<0||cc>=cols||rr>=rows)continue;
+        var j=rr*cols+cc,m=Math.min(N[i],N[j]);if(m<.22)continue;
+        ctx.strokeStyle=rgba(P.act,(.12+.7*m).toFixed(3));
+        ctx.beginPath();ctx.moveTo(X[i],Y[i]);ctx.lineTo(X[j],Y[j]);ctx.stroke()}}
+    /* needles that shrink into nodes */
+    for(i=0;i<X.length;i++){var n=N[i],L=CELL*.62*(1-.85*n),ca=Math.cos(ANG[i])*L/2,sa=Math.sin(ANG[i])*L/2;
+      if(n<.35){ctx.strokeStyle=rgba(P.idle,.18+.4*n);ctx.lineWidth=1.4;
+        ctx.beginPath();ctx.moveTo(X[i]-ca,Y[i]-sa);ctx.lineTo(X[i]+ca,Y[i]+sa);ctx.stroke()}
+      if(n>.15){ctx.fillStyle=rgba(P.act,Math.min(1,.2+n).toFixed(3));
+        ctx.beginPath();ctx.arc(X[i],Y[i],1.2+3*n,0,6.283);ctx.fill()}}
+    ctx.strokeStyle=P.acc;ctx.globalAlpha=.7;ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.arc(px,py,7,0,6.283);ctx.stroke();ctx.globalAlpha=1;
+    requestAnimationFrame(frame);
+  }
+  addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY});
+  document.addEventListener('pointerleave',function(){mx=my=-999});
+  var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(build,150)});
+  build();frame();
+})();
+</script>
+</body>
+</html>
